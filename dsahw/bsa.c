@@ -282,13 +282,52 @@ void AlternateElements(int a[],int size){
         printf("%d\n",a[i]);
     }
 }
-
+void DuplicateElements(int a[],int size){
+    printf("Enter elements of array :\n");
+    for(int i = 0;i<size;i++){
+        scanf("%d",&a[i]);
+    }
+    for(int i = 0;i<size;i++){
+        for(int j = i+1;j<size;j++){
+        if(a[i] == a[j]){
+            for(int k = j;k<size-1;k++){
+                a[k] = a[k+1];
+            }
+            size--;
+            j--;
+            }
+        }
+    }
+    printf("After deleting  duplicates :\n");
+    for(int i = 0;i<size;i++){
+        printf("%d\n",a[i]);
+    }
+}
+void FindNumbeerDuplicate(int a[],int size){
+// printf("Enter elements of array :");
+// for(int i = 0;i<size;i++){
+//     scanf("%d",&a[i]);
+// }
+// int count = 0;
+// for(int i = 0;i<size;i++){
+//     for(int j = i + 1; i<size;i++){
+//         if(a[i] == a[j]){
+//             for(int k = j;k<size --;k++){
+//                 a[k] = a[k+1];count++;
+//                }
+//                size--;
+//                j--;
+//           }
+//     }
+// }
+// printf("Count of Duplicate Number is : %d",count);
+}
 
 int main(){
     int sizes,firstarray[100],secondarray[100],thirdarray[100];
     
     printf("Enter size of array : ");
     scanf("%d",&sizes);
-    AlternateElements(firstarray,sizes);
+    FindNumbeerDuplicate(firstarray,sizes);
     return 0;
 }
